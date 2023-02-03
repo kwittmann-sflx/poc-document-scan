@@ -1,0 +1,11 @@
+{
+  "appId": "com.schuettflix.pocdocumentscan",
+  "appName": "poc-document-scan",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
