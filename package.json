@@ -10,13 +10,15 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ios": "npm run build && cap sync && cap run ios"
   },
   "dependencies": {
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
     "@capacitor/ios": "^4.6.2",
-    "@capacitor/splash-screen": "latest"
+    "@capacitor/splash-screen": "latest",
+    "capacitor-document-scanner": "^1.0.1"
   },
   "devDependencies": {
     "@capacitor/cli": "latest",

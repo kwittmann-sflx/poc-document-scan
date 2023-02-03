@@ -6,6 +6,7 @@ specifiers:
   '@capacitor/core': latest
   '@capacitor/ios': ^4.6.2
   '@capacitor/splash-screen': latest
+  capacitor-document-scanner: ^1.0.1
   eslint: ^8.0.1
   eslint-config-standard: ^17.0.0
   eslint-plugin-import: ^2.25.2
@@ -18,6 +19,7 @@ dependencies:
   '@capacitor/core': 4.6.2
   '@capacitor/ios': 4.6.2_@capacitor+core@4.6.2
   '@capacitor/splash-screen': 4.1.3_@capacitor+core@4.6.2
+  capacitor-document-scanner: 1.0.1_@capacitor+core@4.6.2
 
 devDependencies:
   '@capacitor/cli': 4.6.2
@@ -404,6 +406,14 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
     dev: true
+
+  /capacitor-document-scanner/1.0.1_@capacitor+core@4.6.2:
+    resolution: {integrity: sha512-WOSqwr74lYvLKKVUaaymckywQ9eYk4cxu/K54ouskQpHWL170jATYdLWqWluevQDFSLyGh8NerAjQcMLOKWlpw==}
+    peerDependencies:
+      '@capacitor/core': ^4.0.0
+    dependencies:
+      '@capacitor/core': 4.6.2
+    dev: false
 
   /chalk/4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}

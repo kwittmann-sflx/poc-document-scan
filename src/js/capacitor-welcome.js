@@ -1,5 +1,6 @@
 import { SplashScreen } from '@capacitor/splash-screen'
-import { Camera } from '@capacitor/camera'
+import { Capacitor } from '@capacitor/core'
+import { DocumentScanner } from 'capacitor-document-scanner'
 
 window.customElements.define(
   'capacitor-welcome',
@@ -11,7 +12,7 @@ window.customElements.define(
 
       const root = this.attachShadow({ mode: 'open' })
 
-      root.innerHTML = `
+      root.innerHTML = /* html */`
     <style>
       :host {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -85,8 +86,16 @@ window.customElements.define(
           <img id="image" style="max-width: 100%">
         </p>
       </main>
+      <ul class="log"></ul>
     </div>
     `
+    }
+
+    addLog (message = '') {
+      const self = this
+      const li = document.createElement('li')
+      li.textContent = message
+      self.shadowRoot.querySelector('.log').append(li)
     }
 
     connectedCallback () {
@@ -94,17 +103,26 @@ window.customElements.define(
 
       self.shadowRoot.querySelector('#take-photo').addEventListener('click', async function (e) {
         try {
-          const photo = await Camera.getPhoto({
-            resultType: 'uri'
-          })
+          // self.addLog('hello!')
+          // const photo = await Camera.getPhoto({
+          //   resultType: 'uri'
+          // })
 
-          const image = self.shadowRoot.querySelector('#image')
-          if (!image) {
-            return
+          // image.src = photo.webPath
+
+          // start the document scanner
+          const { scannedImages } = await DocumentScanner.scanDocument()
+
+          // get back an array with scanned image file paths
+          if (scannedImages.length > 0) {
+            const image = self.shadowRoot.querySelector('#image')
+            if (!image) {
+              return
+            }
+            image.src = Capacitor.convertFileSrc(scannedImages[0])
           }
-
-          image.src = photo.webPath
         } catch (e) {
+          self.addLog(e.message)
           console.warn('User cancelled', e)
         }
       })
