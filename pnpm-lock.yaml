@@ -4,6 +4,7 @@ specifiers:
   '@capacitor/camera': latest
   '@capacitor/cli': latest
   '@capacitor/core': latest
+  '@capacitor/ios': ^4.6.2
   '@capacitor/splash-screen': latest
   eslint: ^8.0.1
   eslint-config-standard: ^17.0.0
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@capacitor/camera': 4.1.4_@capacitor+core@4.6.2
   '@capacitor/core': 4.6.2
+  '@capacitor/ios': 4.6.2_@capacitor+core@4.6.2
   '@capacitor/splash-screen': 4.1.3_@capacitor+core@4.6.2
 
 devDependencies:
@@ -66,6 +68,14 @@ packages:
     resolution: {integrity: sha512-M/KpAg+peft/HTb7svLiKHxjbll67ybs1vEqhZuvjXlwro53NxNXR4YJS7+wNXZSiA4Kxjtf+a754xGgZcMarA==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@capacitor/ios/4.6.2_@capacitor+core@4.6.2:
+    resolution: {integrity: sha512-3hQzbAOk+drCLyFjnytvkc20Mr077/9tQrv6iTghDXESDGR6EgcaYUXzKdVwuJscb0R459+5UQ2mYtkx6ES4TQ==}
+    peerDependencies:
+      '@capacitor/core': ^4.6.0
+    dependencies:
+      '@capacitor/core': 4.6.2
     dev: false
 
   /@capacitor/splash-screen/4.1.3_@capacitor+core@4.6.2:
